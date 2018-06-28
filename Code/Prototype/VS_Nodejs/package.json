@@ -1,0 +1,9 @@
+{
+  "name": "smart-session",
+  "version": "0.0.0",
+  "description": "SmartSession",
+  "main": "server.js",
+  "author": {
+    "name": "robb"
+  }
+}
