@@ -1,15 +1,5 @@
 'use strict';
 
-/*
-var http = require('http');
-var port = process.env.PORT || 1337;
-
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
-*/
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -21,6 +11,21 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
+
+// Configuring the database
+const dbConfig = require('./config/database.config.js');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+// Connecting to the database
+mongoose.connect(dbConfig.url)
+    .then(() => {
+        console.log("Successfully connected to the database");
+    }).catch(err => {
+        console.log('Could not connect to the database. Exiting now...');
+        process.exit();
+    });
 
 // define a simple route
 app.get('/', (req, res) => {
