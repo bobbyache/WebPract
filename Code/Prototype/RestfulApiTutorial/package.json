@@ -1,0 +1,14 @@
+{
+  "name": "smart-session",
+  "version": "0.0.0",
+  "description": "SmartSession",
+  "main": "server.js",
+  "author": {
+    "name": "robb"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.7"
+  }
+}
