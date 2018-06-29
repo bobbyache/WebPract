@@ -3,6 +3,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+var jwt = require('express-jwt');
+var auth = jwt({
+    secret: 'MY_SECRET',
+    userProperty: 'payload'
+});
+
 // create express app.
 const app = express();
 
@@ -27,6 +33,7 @@ const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
+//var User = mongoose.model('../models/users.model.js');
 
 // Connecting to the database
 mongoose.connect(dbConfig.url)
@@ -42,10 +49,11 @@ app.get('/', (req, res) => {
     res.json({ "message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes." });
 });
 
-// Require Notes routes
+// Require routes
 require('./app/routes/note.routes.js')(app);
 require('./app/routes/goal.routes.js')(app);
 require('./app/routes/journalEntry.routes.js')(app);
+require('./app/routes/login.routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {

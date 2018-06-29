@@ -29,6 +29,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\config\passport.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\controllers\authentication.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\goal.controller.js">
       <SubType>Code</SubType>
     </Compile>
@@ -36,6 +42,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\controllers\note.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\controllers\profile.controller.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models\goal.model.js">
@@ -47,10 +56,16 @@
     <Compile Include="app\models\note.model.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\models\users.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\routes\goal.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\journalEntry.routes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\login.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\note.routes.js">
@@ -66,6 +81,7 @@
   <ItemGroup>
     <Folder Include="app\models\" />
     <Folder Include="app\controllers\" />
+    <Folder Include="app\config\" />
     <Folder Include="app\routes\" />
     <Folder Include="config\" />
     <Folder Include="app\" />
