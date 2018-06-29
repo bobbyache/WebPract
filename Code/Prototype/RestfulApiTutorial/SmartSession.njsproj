@@ -29,10 +29,19 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\controllers\goal.controller.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\controllers\note.controller.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\models\goal.model.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\models\note.model.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\routes\goal.routes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes\note.routes.js">
