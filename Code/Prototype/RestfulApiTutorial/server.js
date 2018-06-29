@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
 // Require Notes routes
 require('./app/routes/note.routes.js')(app);
 require('./app/routes/goal.routes.js')(app);
+require('./app/routes/journalEntry.routes.js')(app);
 
 // listen for requests
 app.listen(3000, () => {
