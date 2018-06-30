@@ -56,9 +56,7 @@
     <Compile Include="app\models\note.model.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="app\models\users.model.js">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="app\models\user.model.js" />
     <Compile Include="app\routes\goal.routes.js">
       <SubType>Code</SubType>
     </Compile>

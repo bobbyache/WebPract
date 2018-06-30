@@ -36,6 +36,12 @@ userSchema.methods.generateJwt = function () {
         name: this.name,
         exp: parseInt(expiry.getTime() / 1000),
     }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
+
+    /*
+     * Note: It’s important that your secret is kept safe: only the originating server should know what 
+     * it is. It’s best practice to set the secret as an environment variable, and not have it in the 
+     * source code, especially if your code is stored in version control somewhere.
+     * */
 };
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,6 +1,4 @@
-﻿//var mongoose = require('mongoose');
-//var User = mongoose.model('User');
-const User = require('../models/users.model.js');
+﻿const User = require('../models/user.model.js');
 
 module.exports.profileRead = function (req, res) {
 

@@ -3,11 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-var jwt = require('express-jwt');
-var auth = jwt({
-    secret: 'MY_SECRET',
-    userProperty: 'payload'
-});
+
 
 // create express app.
 const app = express();
@@ -18,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
+var passport = require('passport');
 
 // ****************************************************************************************************
 // Allow CORS **** THIS SHOULD BE SWITCHED OFF WHEN GOING LIVE ***
@@ -48,6 +45,11 @@ mongoose.connect(dbConfig.url)
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes." });
 });
+
+// passport initialization
+require('./app/models/user.model.js');
+require('./app/config/passport.js');
+app.use(passport.initialize());
 
 // Require routes
 require('./app/routes/note.routes.js')(app);
