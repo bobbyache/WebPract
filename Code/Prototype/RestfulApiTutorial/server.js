@@ -57,6 +57,14 @@ require('./app/routes/goal.routes.js')(app);
 require('./app/routes/journalEntry.routes.js')(app);
 require('./app/routes/login.routes.js')(app);
 
+// [SH] Catch unauthorised errors
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401);
+        res.json({ "message": err.name + ": " + err.message });
+    }
+});
+
 // listen for requests
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
