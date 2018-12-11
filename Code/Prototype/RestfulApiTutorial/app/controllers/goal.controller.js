@@ -11,9 +11,7 @@ exports.create = (req, res) => {
 
     // Create a Goal
     const goal = new Goal({
-        title: req.body.title || "Untitled Goal",
-        min: req.body.min,
-        tasks: req.body.tasks
+        title: req.body.title || "Untitled Goal"
     });
 
     // Save Goal in the database
@@ -72,9 +70,7 @@ exports.update = (req, res) => {
 
     // Find goal and update it with the request body
     Goal.findByIdAndUpdate(req.params.goalId, {
-        title: req.body.title || "Untitled Goal",
-        min: req.body.min,
-        tasks: req.body.tasks
+        title: req.body.title || "Untitled Goal"
     }, { new: true })
         .then(goal => {
             if (!goal) {

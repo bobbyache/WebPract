@@ -2,10 +2,7 @@
 
 const GoalSchema = mongoose.Schema({
     title: String,
-    min: Number,
-    tasks: Array
-}, {
-        timestamps: true
-    });
+    description: String
+});
 
 module.exports = mongoose.model('Goal', GoalSchema);
